@@ -30,6 +30,5 @@ export const ContainerStyle = styled.div`
 
   & + div {
     margin-top: 8px;
-    margin-bottom: 24px;
   }
 `;
