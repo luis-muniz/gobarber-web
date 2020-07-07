@@ -28,40 +28,6 @@ export const Content = styled.div`
       font-weight: 500;
     }
 
-    input {
-      border: 2px solid #232129;
-      border-radius: 10px;
-      padding: 17px;
-      background: #232129;
-      width: 100%;
-      height: 56px;
-      color: #fff;
-
-      &::placeholder {
-        color: #666360;
-      }
-
-      & + input {
-        margin-top: 8px;
-        margin-bottom: 24px;
-      }
-    }
-
-    button {
-      border: none;
-      font-weight: 500;
-      background: #ff9000;
-      border-radius: 10px;
-      color: #312e38;
-      width: 100%;
-      height: 56px;
-      transition: 0.2s;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-
     a {
       color: #f4ede8;
       text-decoration: none;
