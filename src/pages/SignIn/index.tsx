@@ -1,9 +1,9 @@
-import React, { useRef, useCallback, useContext } from 'react';
+import React, { useRef, useCallback } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn, FiLock, FiMail } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
-import { title } from 'process';
 import { Container, Content, Background } from './styles';
 import logo from '../../assets/logo.svg';
 import Input from '../../components/Input';
@@ -21,6 +21,7 @@ const SignIn: React.FC = () => {
   const refForm = useRef<FormHandles>(null);
   const { signIn } = useAuth();
   const { addToast } = useToast();
+  const history = useHistory();
 
   const handleFormSubmit = useCallback(
     async (data: InputData) => {
@@ -39,6 +40,8 @@ const SignIn: React.FC = () => {
           email: data.email,
           password: data.password,
         });
+
+        history.push('/dashboard');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -53,7 +56,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [signIn, addToast],
+    [signIn, addToast, history],
   );
 
   return (
@@ -78,10 +81,10 @@ const SignIn: React.FC = () => {
             <Button type="submit">Entrar</Button>
             <a href="forgot">Esqueci minha senha</a>
           </Form>
-          <a href="create">
+          <Link to="/signup">
             <FiLogIn />
             Criar conta
-          </a>
+          </Link>
         </Content>
         <Background />
       </Container>
