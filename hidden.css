@@ -1,4 +1,4 @@
-div.actionlist__item.actionlist__item--save-as-template,
-div.actionlist__item.actionlist__item--send-test {
+actionlist__item.actionlist__item--save-as-template,
+actionlist__item.actionlist__item--send-test {
   display: none;
 }
